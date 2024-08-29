@@ -1071,11 +1071,14 @@ background-color: #333;
 
 @media all and (max-width:430px){
     /* index.html */
+    .nav-menu{
+        width: 220px;
+    }
     .mainvisual h1{
-        font-size: 29px;
+        font-size: 25px;
     }
     .mainvisual p{
-        font-size: 23px;
+        font-size: 21px;
     }
     .mainvisual h1 span{
         padding: 0 5px 20px;
