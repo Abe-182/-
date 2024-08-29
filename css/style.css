@@ -391,31 +391,104 @@ main{
     display: block;
     /* margin: 0 20px; */
 }
-/* .slick-slide{ */
-    /* margin: 0 10px; */
-/* } */
+
 /* 矢印 */
-.slick-prev:before, 
-.slick-next:before{
-    position: absolute;/*絶対配置にする*/
-    top: 42%;
-    cursor: pointer;/*マウスカーソルを指マークに*/
-    outline: none;/*クリックをしたら出てくる枠線を消す*/
+/* ----------------- */
+.slick-arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+    width: 20px;
+    height: 38px;
+    color: transparent;
+    z-index: 1;
+    transition: opacity 0.5s;
+    /* z-index: 1; */
+  }
+  .slick-arrow:hover {
+    opacity: 0.7;
+  }
+
+  /* 共通設定 */
+  
+  .slick-next::before,
+  .slick-next::after,
+  .slick-prev::before,
+  .slick-prev::after {
+    position: absolute;
+    top: 50%;
+    /* left: 0; */
+    transform: translateX(-50%);
+    /* bottom: 0; */
+    margin: 0 auto;
+    content: "";
+    vertical-align: middle;
+  }
+  .slick-next::after,
+  .slick-prev::after {
+    width: 26px;
+    height: 26px;
     border-top: 3px solid #333;
     border-right: 3px solid #333;
-    height: 10px;
-    width: 10px;
-}
-.slick-prev:before {
-    /* 戻る矢印の位置と形状 */
-    left: -1.5%;
-    transform: rotate(-135deg);
-}
-.slick-next:before{
-    /* 次へ矢印の位置と形状 */
-    right: -1.5%;
+  }
+  
+  /* next */
+  
+  /* .slick-next { */
+    /* right: 26px; */
+  /* } */
+  .slick-next::after {
+    right: -30%;
     transform: rotate(45deg);
-}
+  }
+  
+  /* prev */
+  
+  /* .slick-prev { */
+    /* left: 26px; */
+  /* } */
+  .slick-prev::after {
+    left: -30%;
+    transform: rotate(-135deg);
+  }
+/* ----------------- */
+
+
+/* .slide-arrow{ */
+    /* position: relative; */
+/* } */
+/* .prev-arrow:before, 
+.next-arrow:before{ */
+    /* .slick-prev:before,  */
+    /* .slick-next:before{ */
+    /* position: absolute; */
+    /* 絶対配置にする */
+    /* top: 42%; */
+    /* cursor: pointer; */
+    /*マウスカーソルを指マークに*/
+    /* outline: none; */
+    /*クリックをしたら出てくる枠線を消す*/
+    /* border-top: 3px solid #333; */
+    /* border-right: 3px solid #333; */
+    /* height: 10px; */
+    /* width: 10px; */
+/* } */
+/* .prev-arrow:before { */
+/* .slick-prev:before { */
+    /* 戻る矢印の位置と形状 */
+    /* left: -1.5%; */
+    /* transform: rotate(-135deg); */
+/* } */
+/* .next-arrow:before{ */
+/* .slick-next:before{ */
+    /* 次へ矢印の位置と形状 */
+    /* right: -1.5%; */
+    /* transform: rotate(45deg); */
+/* } */
+
 /* スライダー下部の点 */
 .slick-dots li{
     top: 20px;    

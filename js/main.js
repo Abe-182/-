@@ -36,8 +36,10 @@ $(function () {
 $(".slide-items").slick({
     // 矢印を表示
     // arrows: false,
-    // prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-	// nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
+    // prevArrow: '<div class="slide-arrow prev-arrow></div>',
+    //矢印部分PreviewのHTMLを変更
+	// nextArrow: '<div class="slide-arrow next-arrow"></div>',
+    //矢印部分NextのHTMLを変更
     // スライド下部に点を表示
     dots: true, 
     // スライドを中心にして前後のスライドを部分的に表示
