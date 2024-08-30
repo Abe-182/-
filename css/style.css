@@ -7,7 +7,9 @@ font-optical-sizing: auto;
 font-weight: weight;
 font-style: normal;
 color: #333;
-/* position: relative; */
+min-height: 100vh;
+position: relative;
+padding-bottom: 80px;
 }
 
 a {
@@ -131,6 +133,7 @@ img {
 }
 main{
     padding: 80px 0;
+    /* margin-bottom: 80px; */
 }
 /* footer */
 #footer{
@@ -140,6 +143,12 @@ main{
     background-color: #FF008C;
     width: 100%;
     height: 80px;
+    /* margin-top: 80px; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* margin: 0 auto; */
 }
 #footer img{
     width: 80px;
@@ -719,6 +728,7 @@ iframe{
     /* justify-content: space-between; */
     align-items: center;
     flex: 1 1 1160px;
+    margin-bottom: 80px;
     /* margin: 0 20px; */
 
 }
@@ -749,6 +759,7 @@ iframe{
     margin-top: 80px;
     margin-bottom: 40px;
     padding-top: 80px;
+    position: relative;
     /* letter-spacing: 15px;  */
 }
 /* 黄色の下線 */
@@ -758,7 +769,8 @@ iframe{
     width: 165px;
     /* width: auto; */
     height: 11px;
-    top: 183px;
+    top: 105px;
+    /* transform: translateY(100%); */
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
@@ -851,6 +863,7 @@ background-color: #333;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+    margin-bottom: 80px;
     /* position: relative; */
 }
 .before-next-link a{
@@ -1020,6 +1033,7 @@ background-color: #333;
         /* flex-direction: column; */
         flex-wrap: wrap;
         gap: 35px;
+        margin-bottom: 80px;
     }
     .access{
         text-align: center;
