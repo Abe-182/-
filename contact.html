@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>犬鷲探検隊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東北楽天ゴールデンイーグルスの魅力を紹介しています。筆者の“疫病神”っぷりと併せてお楽しみください。">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- プラグイン「slick」のcssを読み込む -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="container">
+        <a href="index.html"><img src="img/logo3.png" alt="logo"></a>
+        <!-- ナビゲーション -->
+        <nav id="nav">
+            <ul class="nav-menu">
+                <li><a href="#rice">メシ</a></li>
+                <li><a href="#view">風景</a></li>
+                <li><a href="#game">試合</a></li>
+                <li><a href="about.html">「犬鷲探検隊」とは</a></li>
+                <!-- -----------あとで加えた↓--------------- -->
+                <li><a href="contact.html">ご質問</a></li>
+                <!-- -----------あとで加えた↑--------------- -->
+            </ul>
+        </nav>
+        <!-- 透過背景 -->
+        <div class="mask"></div>
+        <!-- ハンバーガーメニューボタン -->
+        <div class="toggle_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main id="main" class="contact-wrapper">
+        <h2><span>ご質問</span></h2>
+        <form action="#">
+            <dl class="contact-list">
+                <dt><label for="name">お名前</label></dt>
+                <dd><input type="text" id="name" name="your-name" required></dd>
+                <dt><label for="email">e-mail</label></dt>
+                <dd><input type="email" id="email" name="your-email" required></dd>
+                <dt><label for="favorite">推しチーム</label></dt>
+                <dd><select name="favorite" id="favorite" required>
+                        <option value="">チームを選択</option>
+                        <option value="tigers">阪神タイガース</option>
+                        <option value="carp">広島東洋カープ</option>
+                        <option value="dena">横浜DeNAベイスターズ</option>
+                        <option value="giants">読売ジャイアンツ</option>
+                        <option value="swallows">東京ヤクルトスワローズ</option>
+                        <option value="chunichi">中日ドラゴンズ</option>
+                        <option value="orix">オリックス・バファローズ</option>
+                        <option value="lotte">千葉ロッテマリーンズ</option>
+                        <option value="softbank">福岡ソフトバンクホークス</option>
+                        <option value="eagles">東北楽天ゴールデンイーグルス</option>
+                        <option value="seibu">埼玉西武ライオンズ</option>
+                        <option value="fighters">北海道日本ハムファイターズ</option>
+                    </select></dd>
+                <dt><label for="message">質問内容</label></dt>
+                <dd><textarea name="your-message" id="message" required></textarea></dd>
+            </dl>
+            
+            <button class="contact-btn" type="submit" id="#">SEND</button>
+        </form>
+    </main>
+
+    <footer id="footer" class="container">
+        <a class="to-top" href="#"></a>
+        <a href="index.html"><img src="img/logo3.png" alt="logo"></a>
+        <p>&copy;2024</p>
+        <ul>
+            <li><a href="https://www.instagram.com/"><img src="img/Instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://www.facebook.com/"><img src="img/Facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://x.com/"><img src="img/TwitterX.png" alt="TwitterX"></a></li>
+        </ul>
+    </footer>
+
+
+    <!-- プラグイン「slick」のjsを読み込む -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
