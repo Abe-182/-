@@ -8,9 +8,17 @@
             <h1><span>犬鷲探検隊！行くぞ仙台！</span></h1>
             <p><span>～疫病神伝説～</span></p>
         </div>
-        <div class="pic">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/img/mainvisual2.jpg'); ?>" alt="球場正面">
-        </div>
+        <ul class="pic">
+            <li>
+                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/img/mainvisual2.jpg'); ?>" alt="球場正面"> -->
+            </li>
+            <li>
+                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/img/item7.jpg'); ?>" alt="ナイター"> -->
+            </li>
+            <li>
+                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/img/item12.jpg'); ?>" alt="ロゴ"> -->
+            </li>
+        </ul>
     </section>
     <!-- 新着 -->
     <section id="new" class="wrapper">

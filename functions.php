@@ -49,13 +49,25 @@ function add_scripts()
     wp_register_script(
         'jquery_script',
         'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+        // 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
         array(),
-        '1.0',
+        '3.6.0',
         true
     );
+    // slick
     wp_register_script(
         'slick_script',
         'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
+        array(),
+        '1.9.0',
+        true
+    );
+    // bgswitcher
+    wp_register_script(
+        'bgswitcher_script',
+        get_template_directory_uri() . '/js/jquery.bgswitcher.js',
+        // 'https://raw.githubusercontent.com/rewish/jquery-bgswitcher/master/jquery.bgswitcher.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/jquery.bgswitcher/0.4.3/jquery.bgswitcher.min.js',
         array(),
         '1.0',
         true
@@ -64,11 +76,17 @@ function add_scripts()
     wp_enqueue_script(
         'main_script',
         get_template_directory_uri() . '/js/main.js',
-        array('jquery_script', 'slick_script'),
+        array('jquery_script', 'slick_script', 'bgswitcher_script'),
         '1.0',
         true
     );
 
+     // 画像URLをJavaScriptに渡す
+    wp_localize_script('main_script', 'imagePaths', array(
+        'image1' => esc_url(get_template_directory_uri() . '/img/mainvisual2.jpg'),
+        'image2' => esc_url(get_template_directory_uri() . '/img/item7.jpg'),
+        'image3' => esc_url(get_template_directory_uri() . '/img/item12.jpg'),
+    ));
 }
 
 // アイキャッチ画像を有効化する

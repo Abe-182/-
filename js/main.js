@@ -31,6 +31,19 @@ $(function () {
       return false;
     });
   });
+  // =======================================
+  // mainvisualのスライド
+  // $(".pic").bgSwitcher({
+    //   images: ['img/mainvisual2.jpg','img/item7.jpg','img/item12.jpg'],
+    // images: [
+      // '<?php echo esc_url(get_template_directory_uri() . "/img/mainvisual2.jpg"); ?>',
+      // '<?php echo esc_url(get_template_directory_uri() . "/img/item7.jpg"); ?>',
+      // '<?php echo esc_url(get_template_directory_uri() . "/img/item12.jpg"); ?>',
+    // ],
+    // interval: 3000,
+    // loop: true,
+  // });
+
   // ========================================
   // スライダー
   $(".slide-items").slick({
@@ -108,4 +121,66 @@ $(function () {
     // ※詳しく知りたい方は「イベント　バブリング」または「jQuery バブリング」で調べてみてください
     return false;
   });
+
+  // アコーディオン
+  $(".accordion-title").on("click", function () {
+    // クリックしたタイトル以外のopenクラスを外す(－から＋にする)
+    $(".accordion-title").not(this).removeClass("open");
+    // クリックしたタイトル以外のコンテンツを閉じる
+    $(".accordion-title").not(this).next().slideUp(300);
+    // クリックしたタイトルにopenクラスを付け外しして＋と－を切り替える
+    $(this).toggleClass("open");
+    // クリックしたタイトルの次の要素(コンテンツ)を開閉
+    $(this).next().slideToggle(300);
+  });
 });
+
+
+// jqでmainvisual画像をフェードさせるアニメーション
+// チャットGPTより
+// jQuery(document).ready(function($) {
+  // $(".pic").bgSwitcher({
+      // images: [
+          // '<?php echo esc_url(get_template_directory_uri() . "/img/mainvisual2.jpg"); ?>',
+          // '<?php echo esc_url(get_template_directory_uri() . "/img/item7.jpg"); ?>',
+          // '<?php echo esc_url(get_template_directory_uri() . "/img/item12.jpg"); ?>'
+          // templatePath + '/img/mainvisual2.jpg',
+          // templatePath + '/img/item7.jpg',
+      // ],
+      // interval: 3000, // 画像が切り替わる間隔
+      // loop: true,     // ループするかどうか
+      // effect: "fade", // フェード効果
+      // duration: 1000  // フェードの時間
+  // });
+// });
+
+// チャットGPT先生より修正版
+// jQuery(document).ready(function($) {
+//   // PHPの画像URLをJavaScript変数に渡す
+//   var imagePath1 = '<?php echo esc_url(get_template_directory_uri() . "/img/mainvisual2.jpg"); ?>';
+//   var imagePath2 = '<?php echo esc_url(get_template_directory_uri() . "/img/item7.jpg"); ?>';
+//   var imagePath3 = '<?php echo esc_url(get_template_directory_uri() . "/img/item12.jpg"); ?>';
+
+//   $(".pic").bgSwitcher({
+//       images: [imagePath1, imagePath2, imagePath3],
+//       interval: 3000, // 画像が切り替わる間隔
+//       effect: "fade", // フェード効果
+//       duration: 1000  // フェードの速さ
+//   });
+// });
+
+// チャットGPT先生より再修正版
+jQuery(document).ready(function($) {
+  // PHPから渡された画像URLを使用してbgSwitcherを初期化
+  $(".pic").bgSwitcher({
+      images: [
+          imagePaths.image1, // PHPから渡されたURL
+          imagePaths.image2, // PHPから渡されたURL
+          imagePaths.image3  // PHPから渡されたURL
+      ],
+      interval: 4000,  // 画像が切り替わる間隔
+      effect: "fade",  // フェード効果
+      duration: 1000   // フェードの速さ
+  });
+});
+

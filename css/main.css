@@ -272,66 +272,44 @@ main{
     padding: 0 5px 28px;
     border-radius: 25px;
 }
-/* .mainvisual h1 span::after{ */
-    /* content: ""; */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* transform: translateY(70%); */
-    /* left: 0; */
-    /* z-index: -1; */
-    /* width: 100%;  */
-    /* 下線の高さ */
-    /* height: 25px;  */
-    /* background-color: #fff200;  */
-    /* border-radius: 20px; */
-/* } */
-/* .mainvisual h1::before{ */
-    /* flex-shrink: 0; */
-    /* content: ""; */
-    /* position: absolute; */
-    /* flex-wrap: wrap; */
-    /* max-width: 100%; */
-    /* width: 100%; */
-    /* max-width: 100%; */
-    /* height: 35px; */
-    /* top: 50px; */
-    /* left: 0; */
-    /* z-index: -1; */
-    /* border-radius: 25px; */
-    /* background-color: #fff200; */
-/* } */
-/* .mainvisual p::before{ */
-    /* content: ""; */
-    /* position: absolute; */
-    /* max-width: 100%; */
-    /* width: 340px; */
-    /* height: 26px; */
-    /* top: 40px; */
-    /* left: 0; */
-    /* z-index: -1; */
-    /* border-radius: 25px; */
-    /* background-color: #fff200; */
-/* } */
 /* 画像 */
 .pic{
+    width: 80%;
+    height: calc(100vh - 80px);
+    /* object-fit: cover; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* left: 0; */
+    background-size: cover;
+    background-position: center;
+}
+
+/* .pic li{
     width: 75%;
     height: 100%;
-    /* height: 500px; */
+    height: 500px;
     object-fit: cover;
     position: absolute;
     top: 0;
     right: 0;
-    /* z-index: 1; */
-}
-.pic img{
+    z-index: 1;
+} */
+/* .pic li img{ */
     /* display: block; */
-    display: block;
-    width: 100%;
-    height: calc(100vh - 80px);
-    object-fit: cover;
-}
+    /* display: block; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* height: calc(100vh - 80px); */
+    /* height: 100vh; */
+    /* object-fit: cover; */
+    /* object-position: center; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+/* } */
 /* 画像の周りをぼやかす */
-.pic::after{
+#mainvisual .pic li::after{
     content: "";
     position: absolute;
     top: 0;
@@ -340,6 +318,63 @@ main{
     right: 0;
     box-shadow: inset 40px 0px 20px 0px #fff;
 }
+/* 3枚の画像をフェードイン・アウトでスライドショー */
+/*メインビジュアル
+animationを使用して、画像をフェードイン、フェードアウトで切り替えを行う */
+/* #mainvisual .pic li { */
+/* 最初は3枚の画像を非表示にしておく */
+/* opacity: 0; */
+/* アニメーションを実行
+fade：下で定義している「@keyframes fade」を実行
+15s：「@keyframes fade」の処理を15秒かけて実行
+infinite：アニメーションの処理を無限に繰り返す */
+/* animation: fade 15s infinite; */
+/* } */
+/*1枚目の画像のアニメーション実行タイミングを設定
+「animation-delay: 0s;」ですぐに実行*/
+/* #mainvisual .pic li:nth-child(1) { */
+/* animation-delay: 0s; */
+/* } */
+/*2枚目の画像のアニメーション実行タイミングを設定
+「animation-delay: 5s;」で5秒後に実行*/
+/* #mainvisual .pic li:nth-child(2) { */
+/* animation-delay: 5s; */
+/* } */
+/*3枚目の画像のアニメーション実行タイミングを設定
+「animation-delay: 10s;」で10秒後に実行*/
+/* #mainvisual .pic li:nth-child(3) { */
+/* animation-delay: 10s; */
+/* } */
+/*アニメーション処理
+上の「animation」で15sを指定しているので下記の処理を15秒かけて実行
+0%が0秒を表し、100%が15秒後を表す。
+
+0%の「opacity: 0;」で非表示の状態からスタートし、
+15%になるまでの間に少しづつ画像を表示（フェードイン）させる。
+そこから30%の時点までは画像を表示させたままの状態を維持し、
+45%の時点に向けて画像を非表示（フェードアウト）する。
+そこから100%まで非表示の状態を維持する。*/
+/* @keyframes fade { */
+  /* 0% { */
+    /* opacity: 0; */
+  /* } */
+
+  /* 15% { */
+    /* opacity: 1; */
+  /* } */
+
+  /* 30% { */
+    /* opacity: 1; */
+  /* } */
+
+  /* 45% { */
+    /* opacity: 0; */
+  /* } */
+
+  /* 100% { */
+    /* opacity: 0; */
+  /* } */
+/* } */
 
 /* new */
 #new{
@@ -687,7 +722,7 @@ iframe{
 .about-wrapper h2::before{
         content: "";
         position: absolute;
-        width: 265px;
+        width: 300px;
         /* width: auto; */
         height: 15px;
         top: 50%;
@@ -707,7 +742,7 @@ iframe{
     top: 50%;
     transform: translateY(-50%);
     /* left: 430px; */
-    left: -25%;
+    left: -15%;
     /* z-index: -1; */
     background-color: #333;
 }
@@ -720,7 +755,7 @@ iframe{
     top: 50%;
     transform: translateY(-50%);
     /* right: 430px; */
-    right: -25%;
+    right: -15%;
     background-color: #333;
 }
 .introduction{
@@ -749,6 +784,69 @@ iframe{
     font-size: 0.85rem;
     text-align-last: left;
 }
+/* アコーディオン */
+.accordion{
+    margin: 15px auto;
+    min-width: 300px;
+    width: 40%;
+}
+/* .accordion-item{ */
+    /* background-color: #fff200; */
+/* } */
+.accordion-title {
+    background-color: #fff200;
+    cursor: pointer;
+    font-size: 16px;
+    /* font-weight: 400; */
+    padding: 8px 20px;
+    border: 1px solid #fff200;
+    /* +-の基準点 */
+    position: relative;
+}
+.accordion-content {
+    display: none;
+    padding: 10px 20px;
+    border-bottom: 2px solid #fff200;
+    border-left: 2px solid #fff200;
+    border-right: 2px solid #fff200;
+}
+.accordion-content p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+/* 縦線 */
+.accordion-title::before {
+    background: #333; /* 線の色 */
+    content: "";
+    height: 2px; /* 線の太さ */
+    position: absolute;
+    right: 25px;
+    top: 50%; /* 線の位置を縦中央に */
+    transform: rotate(90deg); /* 線を縦に */
+    transition: transform .3s ease-in-out;
+    width: 15px; /* 線の幅 */
+}
+  /* 横線 */
+.accordion-title::after {
+    background: #333; /* 線の色 */
+    content: "";
+    height: 2px; /* 線の太さ */
+    position: absolute;
+    right: 25px;
+    top: 50%; /* 線の位置を縦中央に */
+    transition: opacity .3s ease-in-out;
+    width: 15px; /* 線の幅 */
+}
+  /* 縦線(クリック後) */
+.accordion-title.open::before {
+    transform: rotate(180deg);
+}
+  /* 横線(クリック後) */
+.accordion-title.open::after {
+    opacity: 0;
+}
+
+
 
 /* --------------------- */
 /* contact.html */
@@ -836,7 +934,8 @@ iframe{
     padding: 10px;
 }
 .contact-btn{
-    margin-top: 40px;
+    margin: 40px auto 10px auto;
+    /* margin-top: 40px; */
     width: 150px;
     height: 50px;
     color: #fff;
@@ -848,7 +947,9 @@ iframe{
     color: #FF008C;
     background-color: #fff;
 }
-
+.wpcf7-spinner{
+    display: none;
+}
 /* ---------------------------- */
 /* rice.html view.html game.html */
 .main-title h2{
@@ -979,7 +1080,7 @@ background-color: #333;
     /* margin-bottom: 24px; */
 }
 .text{
-    margin: 24px 0;
+    margin: 25px 0;
     font-size: 0.85rem;
 }
 .flex{
@@ -1137,6 +1238,7 @@ background-color: #333;
     /* mainvisual */
     .pic{
         width: 100%;
+        /* height: calc(100vh - 80px); */
     }
     /* 画像の周りのぼやかしをなくす */
     .pic::after{

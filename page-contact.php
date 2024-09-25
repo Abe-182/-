@@ -1,16 +1,17 @@
 <?php get_header('second'); ?>
 
-<main id="main" class="contact-wrapper">
+<!-- <main id="main" class="contact-wrapper"> -->
 
     <?php if (have_posts()):
         while (have_posts()):
             the_post();
     ?>
 
-            <h2><span>
+            <!-- <h2><span> -->
                     <!-- ご質問 -->
-                    <?php the_title(); ?>
-                </span></h2>
+                    <!-- <?php the_title(); ?> -->
+                <!-- </span> -->
+            <!-- </h2> -->
 
             <!-- <form action="#"> -->
             <?php the_content(); ?>
@@ -46,6 +47,6 @@
     endif;
     ?>
 
-</main>
+<!-- </main> -->
 
 <?php get_footer(); ?>
